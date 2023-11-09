@@ -1,0 +1,35 @@
+<mat-drawer-container class="container" autosize>
+    <!-- Cria um container para o drawer -->
+    <mat-drawer #drawer class="sidenav" mode="side">
+        <!-- Cria o drawer com a classe sidenav e o modo side -->
+        <mat-nav-list class="nav-list">
+            <!-- Cria uma lista de navegação -->
+            <a mat-list-item routerLink="/home">
+                <!-- Cria um item da lista com um link para a rota '/' -->
+                <i class="material-icons">home</i> Home
+                <!-- Adiciona um ícone e o texto 'Home' -->
+            </a>
+            <a mat-list-item routerLink="/contatos">
+                <!-- Cria um item da lista com um link para a rota '/' -->
+                <i class="material-icons">account_circle</i> Contatos
+                <!-- Adiciona um ícone e o texto 'Técnicos' -->
+            </a>
+            <a mat-list-item routerLink="/pessoas">
+                <!-- Cria um item da lista com um link para a rota '/' -->
+                <i class="material-icons">person</i> Pessoas
+                <!-- Adiciona um ícone e o texto 'Clientes' -->
+            </a>
+        </mat-nav-list>
+    </mat-drawer>
+
+
+    <div class="sidenav-content">
+        <!-- Cria um conteúdo para o drawer -->
+        <button class="menu" (click)="drawer.toggle()" mat-icon-button>
+        <!-- Cria um botão para abrir/fechar o drawer -->
+        <mat-icon>menu</mat-icon> <!-- Adiciona um ícone de menu -->
+      </button>
+        <router-outlet></router-outlet>
+    </div>
+
+</mat-drawer-container>

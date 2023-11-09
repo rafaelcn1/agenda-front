@@ -1,0 +1,15 @@
+.container {
+    padding: 5% 10%;
+}
+
+table {
+    width: 100%;
+}
+
+button {
+    margin-bottom: 1%;
+}
+
+#botaoAddPerson {
+    background: #7b1fa2;
+}

@@ -1,0 +1,49 @@
+<div class="container">
+    <h2 mat-dialog-title>Cadastro Nova Pessoa</h2>
+    <mat-dialog-content class="mat-typography">
+        <p>
+            <mat-form-field appearance="fill">
+                <input matInput type="text" name="nome" placeholder="Nome" [(ngModel)]="pessoa.nome">
+                <mat-icon matSuffix><i class="material-icons person">person</i></mat-icon>
+
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker" placeholder="Data Nascimento" [(ngModel)]="pessoa.dataNascimento">
+                <mat-datepicker-toggle matIconSuffix [for]="picker" matDatepickerToggleIcon></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="fill">
+                <input matInput type="text" name="usuario" placeholder="Usuário" [(ngModel)]="pessoa.usuario">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="fill">
+                <input matInput [type]="showPassword ? 'text' : 'password'" name="senha" placeholder="Senha" [(ngModel)]="pessoa.senha">
+                <mat-icon matSuffix><i class="material-icons visibility" (mouseover)="showPassword = true" (mouseout)="showPassword = false">visibility</i></mat-icon>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+                <mat-label>Perfil</mat-label>
+                <mat-select [(ngModel)]="pessoa.perfil">
+                    <mat-option value="admin">ADMIN</mat-option>
+                    <mat-option value="user">USUÁRIO</mat-option>
+                </mat-select>
+                <mat-icon matSuffix><i class="material-icons person">person</i></mat-icon>
+            </mat-form-field>
+        </p>
+        <button class="mat-elevation-z4" mat-flat-button color="primary" (click)="openDialogContato()">Add Contato</button>
+        <p>Quantidade Contatos: {{qtdContato}}</p>
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancelar</button>
+        <button mat-button [mat-dialog-close]="true" (click)="salvar()" cdkFocusInitial>Salvar</button>
+    </mat-dialog-actions>
+
+</div>

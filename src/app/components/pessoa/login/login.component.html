@@ -1,0 +1,22 @@
+<div class="container">
+    <h2 mat-dialog-title><i class="ri-logout-box-line"></i></h2>
+    <mat-dialog-content class="mat-typography">
+        <p>
+            <mat-form-field appearance="fill">
+                <input matInput type="text" name="nome" placeholder="Nome" [(ngModel)]="pessoa.usuario">
+                <mat-icon matSuffix><i class="material-icons person">person</i></mat-icon>
+
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="fill">
+                <input matInput name="senha" placeholder="Senha" [(ngModel)]="pessoa.senha">
+                <mat-icon matSuffix><i class="material-icons visibility">visibility</i></mat-icon>
+            </mat-form-field>
+        </p>
+
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-raised-button color="primary" (click)="login()">Login</button>
+    </mat-dialog-actions>
+</div>

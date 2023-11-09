@@ -1,0 +1,24 @@
+<div class="container">
+    <h2 mat-dialog-title>Editar Contato</h2>
+    <mat-dialog-content class="mat-typography">
+        <p>
+            <mat-form-field appearance="fill">
+                <input matInput type="text" name="nome" placeholder="Telefone" [(ngModel)]="contato.telefone">
+                <mat-icon matSuffix><i class="material-icons person">person</i></mat-icon>
+
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+                <input matInput type="text" name="email" placeholder="Email" [(ngModel)]="contato.email">
+                <mat-icon matSuffix><i class="material-icons email">email</i></mat-icon>
+            </mat-form-field>
+        </p>
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancelar</button>
+        <button mat-button [mat-dialog-close]="true" (click)="editar()" cdkFocusInitial>Salvar</button>
+    </mat-dialog-actions>
+
+</div>
